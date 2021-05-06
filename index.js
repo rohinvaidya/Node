@@ -93,26 +93,15 @@ const server = http.createServer((req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 server.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
+const Logger = require('./logger');
+const logger = new Logger();
 
+logger.on('message', data => (console.log('Called Listner:', data)));
+logger.log('Hello World');
 
-
-
-
-
-
-
-
-
-
-// const Logger = require('./logger');
-// const logger = new Logger();
-
-// logger.on('message', data => (console.log('Called Listner:', data)));
-// logger.log('Hello World');
-
-// const Person = require('./person');
-// const person1 = new Person('John Doe', 30);
-// person1.greeting();
+const Person = require('./person');
+const person1 = new Person('John Doe', 30);
+person1.greeting();
