@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index",
-    "aws-eb:prod": "npm run build && npm run start:prod"
+    "dev": "nodemon index"
   },
   "author": "Rohin Vaidya",
   "license": "ISC",
